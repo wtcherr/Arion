@@ -6,6 +6,7 @@ public class ParallaxBackground : MonoBehaviour
 {
     public ParallaxCamera parallaxCamera;
     List<ParallaxLayer> parallaxLayers = new List<ParallaxLayer>();
+    List<Vector3> parallaxLayersPositions=new List<Vector3>();
   
     void Start()
     {
@@ -19,6 +20,7 @@ public class ParallaxBackground : MonoBehaviour
     void SetLayers()
     {
         parallaxLayers.Clear();
+        parallaxLayersPositions.Clear();
         for (int i = 0; i < transform.childCount; i++)
         {
             ParallaxLayer layer = transform.GetChild(i).GetComponent<ParallaxLayer>();
@@ -26,15 +28,22 @@ public class ParallaxBackground : MonoBehaviour
             if (layer != null)
             {
                 layer.name = "Layer-" + i;
+                parallaxLayersPositions.Add(layer.transform.position);
                 parallaxLayers.Add(layer);
             }
         }
-        }
-        void Move(float delta)
-        {
-            foreach (ParallaxLayer layer in parallaxLayers)
+    }
+    void Move(float delta)
+    {
+        foreach (ParallaxLayer layer in parallaxLayers)
         {
             layer.Move(delta);
+        }
+    }
+    public void resetLayers(){
+        for(int i=0;i<parallaxLayers.Count;i++){
+            Vector3 position=parallaxLayers[i].transform.position;
+            parallaxLayers[i].transform.position=new Vector3(0,position.y,position.z);
         }
     }
 }
