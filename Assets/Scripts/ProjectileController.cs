@@ -32,7 +32,7 @@ public class ProjectileController : MonoBehaviour
         this.direction=dir;
         shooting=true;
         float rotationAngle=(dir.x!=0?Mathf.Atan2(dir.y,dir.x):dir.y)*Mathf.Rad2Deg;
-        transform.rotation=Quaternion.Euler(0,0,rotationAngle);
+        transform.rotation*=Quaternion.Euler(0,0,rotationAngle);
     }
     void OnTriggerEnter2D(Collider2D other) {
         HealthScript hs=other.GetComponent<HealthScript>();

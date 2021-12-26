@@ -22,7 +22,9 @@ public enum stateStatus{
 public class PlayerStateManager : MonoBehaviour
 {
     public List<PlayerStateData> stateDatas=new List<PlayerStateData>();
+    [HideInInspector]
     public Rigidbody2D rigidbody2D;
+    [HideInInspector]
     public Animator animator;
     public Transform groundCheck;
     // Start is called before the first frame update
