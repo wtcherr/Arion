@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 public enum HealthStates{
     alive,
-    revived,
     dead
 }
 public class HealthScript : MonoBehaviour
@@ -12,6 +11,8 @@ public class HealthScript : MonoBehaviour
     public float maxHealth;
     public float health;
     public int lives;
+    public float immunityDuration=2;
+    private float immunityTimer=0;
     void Start()
     {
         
@@ -20,18 +21,22 @@ public class HealthScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(immunityTimer<immunityDuration){
+            immunityTimer+=Time.deltaTime;
+        }
     }
     public void takeDamage(float damage){
-        health-=damage;
-        checkHealthStates();
+        if(immunityTimer>=immunityDuration){
+            health-=damage;
+            if(health<=0){
+                lives--;
+                health=maxHealth;
+            }
+            immunityTimer=0;
+        }
     }
     public HealthStates checkHealthStates(){
-        if(health<=0){
-            lives--;
-            health=maxHealth;
-            if(lives<=0)return HealthStates.dead;
-            return HealthStates.revived;
-        }else return HealthStates.alive;
+        if(lives>0)return HealthStates.alive;
+        else return HealthStates.dead;
     }
 }
