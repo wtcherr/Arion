@@ -1,5 +1,55 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &284891875
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 284891876}
+  - component: {fileID: 284891877}
+  m_Layer: 0
+  m_Name: Die
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &284891876
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 284891875}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5272703757865793539}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &284891877
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 284891875}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 084f8b3dd0306ea499e9df3122884e40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  duration: 100000
+  stateName: 4
+  animationVariableName: IsDead
+  animationVariableValue: 1
+  priority: 10
+  deathDuration: 10
+  deathTimer: 0
 --- !u!1 &5272703757009077809
 GameObject:
   m_ObjectHideFlags: 0
@@ -29,7 +79,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5272703757865793539}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5272703757009077808
 MonoBehaviour:
@@ -50,7 +100,6 @@ MonoBehaviour:
   priority: 0
   speed: 5
   followRange: 20
-  target: {fileID: 0}
 --- !u!1 &5272703757492588124
 GameObject:
   m_ObjectHideFlags: 0
@@ -158,8 +207,9 @@ Transform:
   m_LocalPosition: {x: 18.836151, y: 9.5, z: -0.0019836426}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 5272703758008686474}
   - {fileID: 5272703757009077823}
+  - {fileID: 5272703758008686474}
+  - {fileID: 284891876}
   m_Father: {fileID: 5272703758846587921}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -192,7 +242,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5272703757865793539}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5272703758008686475
 MonoBehaviour:
@@ -212,7 +262,6 @@ MonoBehaviour:
   animationVariableValue: 0
   priority: 0
   firePoint: {fileID: 5272703758228444823}
-  target: {fileID: 0}
   projectile: {fileID: 8120300810839900392, guid: 3e98c5c352b33fb4ba3987a3da5e2bd9, type: 3}
   attackRange: 20
   cooldownDuration: 2
@@ -258,7 +307,6 @@ GameObject:
   - component: {fileID: 5272703758254449246}
   - component: {fileID: 5272703758254449247}
   - component: {fileID: 5272703758254449232}
-  - component: {fileID: 5272703758254449233}
   - component: {fileID: 5272703758254449244}
   - component: {fileID: 5272703758254449245}
   - component: {fileID: 5272703758254449243}
@@ -277,7 +325,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5272703758254449235}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6.0813, y: -5.1, z: -0.0019836426}
+  m_LocalPosition: {x: 5.02, y: -0.34, z: -0.0019836426}
   m_LocalScale: {x: 6.1515, y: 6.1515, z: 6.1515}
   m_Children:
   - {fileID: 5272703758228444823}
@@ -370,31 +418,7 @@ MonoBehaviour:
   maxHealth: 5
   health: 5
   lives: 1
---- !u!114 &5272703758254449233
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5272703758254449235}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 16a242ca5df6e694c990b0ff30785faa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  deathDuration: 10
-  deathFlickerDuration: 5
-  deathFlickerSpeed: 0.1
-  movementSpeed: 3
-  minTargetDistance: 0.2
-  followRange: 30
-  attackRange: 20
-  attackDuration: 2
-  projectile: {fileID: 8120300810839900392, guid: 3e98c5c352b33fb4ba3987a3da5e2bd9, type: 3}
-  firePoint: {fileID: 5272703758228444823}
-  point1: {fileID: 5272703758369793300}
-  point2: {fileID: 5272703758709735128}
-  target: {fileID: 0}
+  immunityDuration: 2
 --- !u!61 &5272703758254449244
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -461,7 +485,9 @@ MonoBehaviour:
   triggerStates:
   - {fileID: 5272703757009077808}
   - {fileID: 5272703758008686475}
+  - {fileID: 284891877}
   animator: {fileID: 0}
+  target: {fileID: 0}
 --- !u!1 &5272703758369793301
 GameObject:
   m_ObjectHideFlags: 0
@@ -600,7 +626,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5272703758846587922}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -7.0603266, y: -5.107868, z: 12.345346}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:

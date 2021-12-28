@@ -6,9 +6,10 @@ public class EnemyState_Follow : EnemyStateData
 {
     public float speed=0;
     public float followRange=0;
-    public Transform target;
+    private Transform target;
 	public override void checkState(EnemyStateManager stateManager, Animator animator)
 	{
+		target=stateManager.target;
 		if(horizontalDistance(stateManager.transform.position,target.position)<=followRange){
             stateManager.move(target.position,speed);
             active=true;
@@ -17,6 +18,7 @@ public class EnemyState_Follow : EnemyStateData
 
 	public override bool checkTrigger(EnemyStateManager stateManager, Animator animator)
 	{
+		target=stateManager.target;
 		if(horizontalDistance(stateManager.transform.position,target.position)<=followRange){
 			return true;
 		}else return false;

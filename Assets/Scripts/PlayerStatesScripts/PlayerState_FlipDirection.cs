@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-[CreateAssetMenu(fileName ="PlayerState_FlipDirection",menuName ="PlayerStates/FlipDirection")]
 public class PlayerState_FlipDirection : PlayerStateData
 {
     private Vector2 direction;

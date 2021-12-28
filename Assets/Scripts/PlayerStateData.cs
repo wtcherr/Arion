@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-public abstract class PlayerStateData : ScriptableObject
+public abstract class PlayerStateData : MonoBehaviour
 {
     protected bool active;
     public PlayerStatesNames stateName;

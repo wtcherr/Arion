@@ -12,6 +12,7 @@ public enum PlayerStatesNames{
     slide,
     airControl,
     flipDirection,
+    meleeAttack,
     die
 }
 public enum stateStatus{
@@ -27,6 +28,8 @@ public class PlayerStateManager : MonoBehaviour
     [HideInInspector]
     public Animator animator;
     public Transform groundCheck;
+    private Vector3 direction;
+    private bool isFacingRight;
     // Start is called before the first frame update
     void Start()
     {
@@ -49,5 +52,28 @@ public class PlayerStateManager : MonoBehaviour
             }
         }
         return status;
+    }
+    public void horizontalMove(Vector3 target,float speed){
+        direction=target-this.transform.position;
+        direction.Normalize();
+        direction.z=0;
+        direction.y=0;
+        transform.position+=direction*speed*Time.deltaTime;
+        flip();
+    }
+    private void flip(){
+        if(Mathf.Abs(direction.x)>0){
+            Vector3 scale=this.transform.localScale;
+            if(isFacingRight){
+                if((scale.x>0)!=(direction.x>0)){
+                    scale.x*=-1;
+                }
+            }else{
+                if((scale.x>0)==(direction.x>0)){
+                    scale.x*=-1;
+                }
+            }
+            this.transform.localScale=scale;
+        }
     }
 }

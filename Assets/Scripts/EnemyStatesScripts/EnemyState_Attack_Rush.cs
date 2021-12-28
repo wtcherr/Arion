@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyState_Attack_Rush : EnemyStateData
 {
-    public Transform target;
+    private Transform target;
     public float speed;
     public float damage;
     public Transform hitBox;
@@ -15,6 +15,7 @@ public class EnemyState_Attack_Rush : EnemyStateData
     private EnemyStateManager stateManager;
 	public override void checkState(EnemyStateManager stateManager, Animator animator)
 	{   
+        target=stateManager.target; 
         this.stateManager=stateManager;
         if(checkTrigger(stateManager,animator)){
             if(cooldownTimer>=cooldownDuration){
@@ -26,6 +27,7 @@ public class EnemyState_Attack_Rush : EnemyStateData
 	}
 	public override bool checkTrigger(EnemyStateManager stateManager, Animator animator)
 	{
+        target=stateManager.target;
         if(horizontalDistance(target.position,stateManager.transform.position)<attackRange){
             return true;
         }else return false;

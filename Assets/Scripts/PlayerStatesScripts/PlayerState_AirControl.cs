@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-[CreateAssetMenu(fileName ="PlayerState_AirControl",menuName ="PlayerStates/AirControl")]
 public class PlayerState_AirControl : PlayerStateData
 {
     public float speed;

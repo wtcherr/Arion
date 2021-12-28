@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyState_Attack_ThrowProjectile : EnemyStateData
 {
     public Transform firePoint;
-    public Transform target;
+    private Transform target;
     public GameObject projectile;
     public float attackRange;
     public float cooldownDuration;
@@ -13,6 +13,7 @@ public class EnemyState_Attack_ThrowProjectile : EnemyStateData
     private Vector3 direction;
 	public override void checkState(EnemyStateManager stateManager, Animator animator)
 	{
+        target=stateManager.target; 
         if(checkTrigger(stateManager,animator)){
             if(cooldownTimer>=cooldownDuration){
                 direction=target.position-firePoint.position;
@@ -29,6 +30,7 @@ public class EnemyState_Attack_ThrowProjectile : EnemyStateData
 
 	public override bool checkTrigger(EnemyStateManager stateManager, Animator animator)
 	{
+        target=stateManager.target;
         if(horizontalDistance(stateManager.transform.position,target.position)<=attackRange){
             return true;
         }else return false;

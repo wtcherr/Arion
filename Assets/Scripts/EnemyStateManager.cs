@@ -15,6 +15,7 @@ public class EnemyStateManager : MonoBehaviour
     public List<EnemyStateData> triggerStates=new List<EnemyStateData>();
     [HideInInspector]
     public Animator animator;
+    public Transform target;
     private List<EnemyStateData> currentStates=new List<EnemyStateData>();
     private Vector3 direction;
     private int index=0;
@@ -72,7 +73,6 @@ public class EnemyStateManager : MonoBehaviour
         direction.z=0;
         direction.y=0;
         transform.position+=direction*speed*Time.deltaTime;
-        //transform.Translate(direction*speed*Time.deltaTime);
         flip();
     }
     private void flip(){
