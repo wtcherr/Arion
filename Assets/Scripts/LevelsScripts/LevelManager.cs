@@ -52,10 +52,10 @@ public class LevelManager : MonoBehaviour
             lives=playerHealth.lives;
         }
     }
-    void respawn(){
+    public void respawn(){
         target.position=lastCheckPoint.transform.position;
     }
-    void gameOver(){
+    public void gameOver(){
         Destroy(target.gameObject);
         Destroy(this.gameObject);
     }

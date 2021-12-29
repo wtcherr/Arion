@@ -18,6 +18,6 @@ public class DeadPoint : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Player")
-            FindObjectOfType<LevelManager>().RespawnPlayer();
+            FindObjectOfType<LevelManager>().respawn();
     }
 }
