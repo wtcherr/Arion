@@ -1,5 +1,55 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5054173759683098101
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1547560327178440511}
+  - component: {fileID: 8607833818735625478}
+  m_Layer: 0
+  m_Name: Die
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1547560327178440511
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5054173759683098101}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.7941628, y: -5.746073, z: -16.443129}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5695930122894179810}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8607833818735625478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5054173759683098101}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 084f8b3dd0306ea499e9df3122884e40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  duration: 100000
+  stateName: 4
+  animationVariableName: 
+  animationVariableValue: 0
+  priority: 10
+  deathDuration: 0.5
+  deathTimer: 0
 --- !u!1 &5695930122202989322
 GameObject:
   m_ObjectHideFlags: 0
@@ -11,7 +61,6 @@ GameObject:
   - component: {fileID: 5695930122202989325}
   - component: {fileID: 5695930122202989324}
   - component: {fileID: 5695930122202989323}
-  - component: {fileID: 5695930122202989327}
   - component: {fileID: 5695930122202989326}
   - component: {fileID: 5695930122202989328}
   m_Layer: 0
@@ -107,31 +156,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &5695930122202989327
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5695930122202989322}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 16a242ca5df6e694c990b0ff30785faa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  deathDuration: 10
-  deathFlickerDuration: 5
-  deathFlickerSpeed: 0.1
-  movementSpeed: 3
-  minTargetDistance: 0.2
-  followRange: 30
-  attackRange: 10
-  attackDuration: 1
-  projectile: {fileID: 8120300810839900392, guid: 3e98c5c352b33fb4ba3987a3da5e2bd9, type: 3}
-  firePoint: {fileID: 5695930123534037218}
-  point1: {fileID: 5695930122269513578}
-  point2: {fileID: 5695930123007282746}
-  target: {fileID: 0}
 --- !u!114 &5695930122202989326
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -147,6 +171,7 @@ MonoBehaviour:
   maxHealth: 0
   health: 6
   lives: 1
+  immunityDuration: 2
 --- !u!114 &5695930122202989328
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -166,7 +191,9 @@ MonoBehaviour:
   triggerStates:
   - {fileID: 5695930122843506885}
   - {fileID: 5695930123648712280}
+  - {fileID: 8607833818735625478}
   animator: {fileID: 0}
+  target: {fileID: 0}
 --- !u!1 &5695930122269513577
 GameObject:
   m_ObjectHideFlags: 0
@@ -244,9 +271,9 @@ MonoBehaviour:
   stateName: 2
   animationVariableName: 
   animationVariableValue: 0
+  priority: 0
   speed: 5
   followRange: 20
-  target: {fileID: 0}
 --- !u!1 &5695930122894179809
 GameObject:
   m_ObjectHideFlags: 0
@@ -276,6 +303,7 @@ Transform:
   m_Children:
   - {fileID: 5695930123648712279}
   - {fileID: 5695930122843506886}
+  - {fileID: 1547560327178440511}
   m_Father: {fileID: 5695930123728692077}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -356,6 +384,7 @@ MonoBehaviour:
   stateName: 0
   animationVariableName: 
   animationVariableValue: 0
+  priority: 0
 --- !u!1 &5695930123405347736
 GameObject:
   m_ObjectHideFlags: 0
@@ -465,8 +494,8 @@ MonoBehaviour:
   stateName: 3
   animationVariableName: 
   animationVariableValue: 0
+  priority: 0
   firePoint: {fileID: 5695930123534037218}
-  target: {fileID: 0}
   projectile: {fileID: 5669903268612296839, guid: 8e260aae6dea9fd4bbed02f8f6a6f03c, type: 3}
   attackRange: 20
   cooldownDuration: 2
@@ -519,6 +548,7 @@ MonoBehaviour:
   stateName: 1
   animationVariableName: 
   animationVariableValue: 0
+  priority: 0
   points:
   - {fileID: 5695930122269513578}
   - {fileID: 5695930123007282746}

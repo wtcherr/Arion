@@ -299,7 +299,7 @@ GameObject:
   m_Component:
   - component: {fileID: 161028050}
   - component: {fileID: 161028051}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -780,7 +780,7 @@ GameObject:
   m_Component:
   - component: {fileID: 258046608}
   - component: {fileID: 258046607}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Confiner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3196,7 +3196,7 @@ GameObject:
   - component: {fileID: 979772687}
   - component: {fileID: 979772686}
   - component: {fileID: 979772689}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: RedGrass Profile 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3494,7 +3494,7 @@ GameObject:
   - component: {fileID: 1002622002}
   - component: {fileID: 1002622001}
   - component: {fileID: 1002622004}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: RedGrass Profile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4028,7 +4028,7 @@ GameObject:
   - component: {fileID: 1157937915}
   - component: {fileID: 1157937914}
   - component: {fileID: 1157937916}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: RedGrass Profile 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4894,7 +4894,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1370139415}
   - component: {fileID: 1370139416}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: ForeGround
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6282,7 +6282,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1679037051}
   - component: {fileID: 1679037052}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Grass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7348,7 +7348,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -15.664547, y: -15.051178}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -7359,7 +7359,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 11.946312, y: 6.7562494}
   m_EdgeRadius: 0
 --- !u!1 &2012048064
 GameObject:
@@ -7529,7 +7529,7 @@ GameObject:
   - component: {fileID: 2052389299}
   - component: {fileID: 2052389298}
   - component: {fileID: 2052389301}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: RedGrass Profile 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
