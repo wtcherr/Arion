@@ -11,8 +11,10 @@ public class PlayerState_MeleeAttack : PlayerStateData
     private float cooldownTimer=0;
     public float activeDuration=1;
     private float activeTimer=0;
+    private HealthScript myHealth;
 	public override void checkState(PlayerStateManager stateManager, Animator animator)
 	{
+        myHealth=stateManager.GetComponent<HealthScript>();
         if(Input.GetKey(meleeBtn)){
             if(cooldownTimer>=cooldownDuration){
                 if(activeTimer<=activeDuration){
@@ -37,8 +39,10 @@ public class PlayerState_MeleeAttack : PlayerStateData
             if(other==null)continue;
             HealthScript hs=other.gameObject.GetComponent<HealthScript>();
             if(hs!=null){
-                hs.takeDamage(damage);
-                return true;
+                if(hs!=myHealth){
+                    hs.takeDamage(damage);
+                    return true;
+                }
             }
         }
         return false;
