@@ -14,10 +14,11 @@ public class LevelManager : MonoBehaviour
         frames=GetComponentsInChildren<FrameManager>();
         if(target==null)target=GameObject.FindWithTag("Player").transform;
         playerHealth=target.GetComponent<HealthScript>();
+        activateAllFrames();
         assignFramesTarget();
-        /*assignCamerasTarget();
         assignFrameSwitches();
-        assignCheckPointsLevelManager();*/
+        deactivateAllFrames();
+        frames[0].gameObject.SetActive(true);
     }
     void Start()
     {
@@ -29,7 +30,6 @@ public class LevelManager : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        Debug.DrawRay(lastCheckPoint.position,target.position-lastCheckPoint.position,Color.cyan);
         checkTargetHealth();
     }
     void assignFramesTarget(){
@@ -58,5 +58,18 @@ public class LevelManager : MonoBehaviour
     public void gameOver(){
         Destroy(target.gameObject);
         Destroy(this.gameObject);
+    }
+    public void finishLevel(){
+        Debug.Log("Level Finished");
+    }
+    void activateAllFrames(){
+        foreach(FrameManager frame in frames){
+            frame.gameObject.SetActive(true);
+        }
+    }
+    void deactivateAllFrames(){
+        foreach(FrameManager frame in frames){
+            frame.gameObject.SetActive(false);
+        }
     }
 }

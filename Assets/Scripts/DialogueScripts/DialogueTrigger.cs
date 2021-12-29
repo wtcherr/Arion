@@ -12,6 +12,7 @@ public class DialogueTrigger : MonoBehaviour
     public TextMeshProUGUI hintText;
     public DialogueManager dialogueManager;
     public GameObject player;
+    private bool displayed;
     void Start() {
         if(player==null)GameObject.FindWithTag("Player");
         displayBtn=KeyCode.E;
@@ -30,9 +31,10 @@ public class DialogueTrigger : MonoBehaviour
     }
     void OnTriggerStay2D(Collider2D other) {
         if(other.transform==player.transform){
-            if(Input.GetKey(displayBtn)){
+            if(Input.GetKey(displayBtn) && !displayed){
                 hintPanel.SetActive(false);
                 startDisplay();
+                displayed=true;
             }
         }   
     }
