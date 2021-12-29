@@ -32,7 +32,6 @@ public class EnemyStateManager : MonoBehaviour
         UpdateTriggerStates();
         if(currentStates.Count==0)UpdateCycleStates();
         UpdateCurrentStates();
-        Debug.DrawRay(this.transform.position,target.position-this.transform.position,Color.blue);
     }
     void UpdateCycleStates(){
         if(index<cycleStates.Count){
@@ -45,7 +44,6 @@ public class EnemyStateManager : MonoBehaviour
         }
     }
     void UpdateTriggerStates(){
-        if(triggerStates.Count==0)return;
         int maxPriority=-100000;
         foreach(EnemyStateData enemyState in triggerStates){
             if(enemyState.checkTrigger(this,animator)){
@@ -53,7 +51,7 @@ public class EnemyStateManager : MonoBehaviour
             }
         }
         foreach(EnemyStateData enemyState in triggerStates){
-            if(enemyState.priority==maxPriority && enemyState.checkTrigger(this,animator)){
+            if(enemyState.priority==maxPriority){
                 addState(enemyState);
             }
         }
@@ -91,8 +89,5 @@ public class EnemyStateManager : MonoBehaviour
             }
             this.transform.localScale=scale;
         }
-    }
-    public List<EnemyStateData> getCurrentStates(){
-        return currentStates;
     }
 }
