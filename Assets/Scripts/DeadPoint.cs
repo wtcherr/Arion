@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class DeadPoint : MonoBehaviour
 {
+    public float damage = 6;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,7 +18,10 @@ public class DeadPoint : MonoBehaviour
     }
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "Player")
-            FindObjectOfType<LevelManager>().RespawnPlayer();
+        HealthScript hs = other.GetComponent<HealthScript>();
+        if (hs != null)
+        {
+            hs.takeDamage(damage);
+        }
     }
 }
