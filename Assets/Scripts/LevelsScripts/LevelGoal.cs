@@ -6,6 +6,8 @@ public class LevelGoal : MonoBehaviour
 {
     public LevelManager levelManager;
     void OnTriggerEnter2D(Collider2D other) {
-        levelManager.finishLevel();
+        if(levelManager!=null){
+            levelManager.finishLevel();
+        }
     }
 }

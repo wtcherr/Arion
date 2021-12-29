@@ -14,6 +14,7 @@ public class LevelManager : MonoBehaviour
         frames=GetComponentsInChildren<FrameManager>();
         if(target==null)target=GameObject.FindWithTag("Player").transform;
         playerHealth=target.GetComponent<HealthScript>();
+        GetComponentInChildren<LevelGoal>().levelManager=this;
         activateAllFrames();
         assignFramesTarget();
         assignFrameSwitches();
