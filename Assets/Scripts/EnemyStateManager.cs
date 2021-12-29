@@ -90,7 +90,4 @@ public class EnemyStateManager : MonoBehaviour
             this.transform.localScale=scale;
         }
     }
-    public List<EnemyStateData>getCurrentStates(){
-        return currentStates;
-    }
 }
