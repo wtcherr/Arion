@@ -116,7 +116,6 @@ Transform:
   m_Children:
   - {fileID: 3989303203999237017}
   - {fileID: 3989303204417178407}
-  - {fileID: 3302984812153776190}
   m_Father: {fileID: 3989303204826305441}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -413,56 +412,6 @@ Transform:
   m_Father: {fileID: 3989303203485974850}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &5839562732619652133
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3302984812153776190}
-  - component: {fileID: 5313194903586580987}
-  m_Layer: 0
-  m_Name: Die
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &3302984812153776190
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5839562732619652133}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 8.969924, y: -3.6930754, z: -4.3705792}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 3989303203647425328}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5313194903586580987
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5839562732619652133}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 084f8b3dd0306ea499e9df3122884e40, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  duration: 100000
-  stateName: 4
-  animationVariableName: 
-  animationVariableValue: 0
-  priority: 10
-  deathDuration: 0.5
-  deathTimer: 0
 --- !u!1001 &3989303203565258676
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -737,22 +686,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &3989303204231114384
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2294853490526865820}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0df5f8d922976e4fb47da7e4e4810fb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 6
-  health: 6
-  lives: 1
-  immunityDuration: 2
 --- !u!114 &3989303204231114385
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -772,6 +705,21 @@ MonoBehaviour:
   triggerStates:
   - {fileID: 3989303203999237018}
   - {fileID: 3989303204417178392}
-  - {fileID: 5313194903586580987}
   animator: {fileID: 0}
   target: {fileID: 0}
+--- !u!114 &3989303204231114384
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2294853490526865820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0df5f8d922976e4fb47da7e4e4810fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 6
+  health: 6
+  lives: 1
+  immunityDuration: 2
