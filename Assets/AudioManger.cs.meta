@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Scripts/EnemyStatesScripts/EnemyState_Attack_Melee.cs.meta
+guid: db85765188c7c9a4b83127b81e252a20
+=======
+guid: 02274c8cfcd8a7b4299dc05f468a05b4
+>>>>>>> b46243d1a21aeffb1644b7fbd853ab34b184a630:Assets/AudioManger.cs.meta
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

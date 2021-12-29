@@ -13,8 +13,10 @@ public class EnemyState_Attack_Rush : EnemyStateData
     public float cooldownDuration;
     private float cooldownTimer=0;
     private EnemyStateManager stateManager;
+    private HealthScript myHealth;
 	public override void checkState(EnemyStateManager stateManager, Animator animator)
 	{   
+        if(myHealth==null)myHealth=stateManager.GetComponent<HealthScript>();
         target=stateManager.target; 
         this.stateManager=stateManager;
         if(checkTrigger(stateManager,animator)){
@@ -53,8 +55,10 @@ public class EnemyState_Attack_Rush : EnemyStateData
             if(other==null)return false;
             HealthScript hs=other.GetComponent<HealthScript>();
             if(hs!=null){
-                hs.takeDamage(damage);
-                return true;
+                if(hs!=myHealth){
+                    hs.takeDamage(damage);
+                    return true;
+                }
             }
         }
         return false;
