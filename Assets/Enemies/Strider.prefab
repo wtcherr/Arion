@@ -59,7 +59,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6201236187625719438}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Strider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -73,7 +73,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6201236187625719439}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -6.3746767, y: -9.744168, z: 12.343363}
   m_LocalScale: {x: 7.619433, y: 7.619433, z: 7.619433}
   m_Children:
@@ -92,7 +92,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6201236187643725928}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Point1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -123,7 +123,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6201236188053867988}
   - component: {fileID: 6201236188053867991}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Rush
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -176,7 +176,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6201236188491385341}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Point2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -206,7 +206,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6201236188528442306}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: TriggerStates
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -244,7 +244,8 @@ GameObject:
   - component: {fileID: 6201236188620455837}
   - component: {fileID: 6201236188620455839}
   - component: {fileID: 6201236188620455836}
-  m_Layer: 3
+  - component: {fileID: 1001461721}
+  m_Layer: 0
   m_Name: Strider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -406,6 +407,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.48, y: 0.31}
   m_EdgeRadius: 0
+--- !u!114 &1001461721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6201236188620455833}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0df5f8d922976e4fb47da7e4e4810fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 6
+  health: 6
+  lives: 1
+  immunityDuration: 2
 --- !u!1 &6201236188748083652
 GameObject:
   m_ObjectHideFlags: 0
@@ -416,7 +433,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6201236188748083655}
   - component: {fileID: 6201236188748083654}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Idle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -464,7 +481,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6201236189204366473}
   - component: {fileID: 6201236189204366472}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Follow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -514,7 +531,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6201236189397342076}
   - component: {fileID: 6201236189397342079}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Patrol
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -569,7 +586,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6201236189575675841}
   - component: {fileID: 6201236189575675840}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: HitBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -625,7 +642,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6201236189588034033}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: CycleStates
   m_TagString: Untagged
   m_Icon: {fileID: 0}
