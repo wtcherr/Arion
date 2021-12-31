@@ -6,6 +6,7 @@ public enum EnemyStatesNames{
     patrol,
     follow,
     attack,
+    stomp,
     die
 }
 public class EnemyStateManager : MonoBehaviour

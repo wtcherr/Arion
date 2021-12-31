@@ -6,9 +6,39 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Level 2 (Chani on Earth).unity
-    guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 0
     path: Assets/Scenes/Pause Menu.unity
     guid: d2f60330c2943ce47a741fad2aacf3c0
+  - enabled: 1
+    path: Assets/Scenes/Elliot.unity
+    guid: a23ab63a338cae943aa09229f24d4951
+  - enabled: 1
+    path: Assets/Scenes/Chani.unity
+    guid: 6ac614957118d1e42be0ab2777ed0018
+  - enabled: 1
+    path: Assets/Scenes/Level 1 (Elliot on Arion).unity
+    guid: 1d092a76a6e902f4c8fc9d0c6e0f0376
+  - enabled: 1
+    path: Assets/Scenes/Level 2 (Chani on Earth).unity
+    guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Level 3 (Elliot on Arion).unity
+    guid: 702765d3e5f07bd4b90513f5f95720fc
+  - enabled: 1
+    path: Assets/Scenes/Level 4 (Chani on Earth).unity
+    guid: eb16fd41860c1974eaa8ff4aebc8d3ae
+  - enabled: 1
+    path: Assets/Scenes/Level 5.unity
+    guid: b06b8a19f4db8b044be0eee3bb720110
+  - enabled: 1
+    path: Assets/Scenes/Game Over.unity
+    guid: c4c2669935e01914d80710debb6c59ee
+  - enabled: 1
+    path: Assets/Scenes/Levels Menu.unity
+    guid: 5ee83bd951f55744682561d51c09e85f
+  - enabled: 1
+    path: Assets/Scenes/Victory Screen.unity
+    guid: a98901123e1684c499fdcf9699cf32ec
+  - enabled: 1
+    path: Assets/Scenes/Elliot and Chani Cutscene Video.unity
+    guid: 95ca9ed8405c20848bc2d0acf01c6394
   m_configObjects: {}
