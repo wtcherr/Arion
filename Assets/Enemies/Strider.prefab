@@ -1,5 +1,62 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &102935671775948092
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4499534198994614639}
+  - component: {fileID: 6724289890000498332}
+  m_Layer: 3
+  m_Name: StompHitBox
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4499534198994614639
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 102935671775948092}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6201236188620455834}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &6724289890000498332
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 102935671775948092}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.008889496, y: 0.1733439}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.51997054, y: 0.20884055}
+  m_EdgeRadius: 0
 --- !u!1 &1629418923936984287
 GameObject:
   m_ObjectHideFlags: 0
@@ -10,7 +67,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6541606138824764261}
   - component: {fileID: 2709383548275101507}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Die
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -50,6 +107,55 @@ MonoBehaviour:
   priority: 10
   deathDuration: 5
   deathTimer: 0
+--- !u!1 &5812512803933277060
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6941707168064802572}
+  - component: {fileID: 9146476066843930039}
+  m_Layer: 3
+  m_Name: Stomp
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6941707168064802572
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5812512803933277060}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6201236188528442306}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &9146476066843930039
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5812512803933277060}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f58dd707d3706f04cad109d7f51ebd12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  duration: 100000
+  stateName: 4
+  animationVariableName: 
+  animationVariableValue: 0
+  priority: 9
+  hitBox: {fileID: 4499534198994614639}
 --- !u!1 &6201236187625719439
 GameObject:
   m_ObjectHideFlags: 0
@@ -59,7 +165,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6201236187625719438}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Strider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,7 +198,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6201236187643725928}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Point1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -123,7 +229,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6201236188053867988}
   - component: {fileID: 6201236188053867991}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Rush
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -162,7 +268,7 @@ MonoBehaviour:
   animationVariableValue: 0
   priority: 1
   speed: 100
-  damage: 2
+  damage: 1
   hitBox: {fileID: 6201236189575675841}
   attackRange: 10
   minDistance: 0.4
@@ -176,7 +282,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6201236188491385341}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Point2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -206,7 +312,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6201236188528442306}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: TriggerStates
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -227,6 +333,7 @@ Transform:
   - {fileID: 6201236189204366473}
   - {fileID: 6201236188053867988}
   - {fileID: 6541606138824764261}
+  - {fileID: 6941707168064802572}
   m_Father: {fileID: 6201236187625719438}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -245,7 +352,7 @@ GameObject:
   - component: {fileID: 6201236188620455839}
   - component: {fileID: 6201236188620455836}
   - component: {fileID: 1001461721}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Strider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -264,6 +371,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6201236189575675841}
+  - {fileID: 4499534198994614639}
   m_Father: {fileID: 6201236187625719438}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -357,6 +465,7 @@ MonoBehaviour:
   triggerStates:
   - {fileID: 6201236189204366472}
   - {fileID: 6201236188053867991}
+  - {fileID: 9146476066843930039}
   - {fileID: 2709383548275101507}
   animator: {fileID: 0}
   target: {fileID: 0}
@@ -433,7 +542,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6201236188748083655}
   - component: {fileID: 6201236188748083654}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Idle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -481,7 +590,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6201236189204366473}
   - component: {fileID: 6201236189204366472}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Follow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -531,7 +640,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6201236189397342076}
   - component: {fileID: 6201236189397342079}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Patrol
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -586,8 +695,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6201236189575675841}
   - component: {fileID: 6201236189575675840}
-  m_Layer: 0
-  m_Name: HitBox
+  m_Layer: 3
+  m_Name: EffectBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -642,7 +751,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6201236189588034033}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: CycleStates
   m_TagString: Untagged
   m_Icon: {fileID: 0}

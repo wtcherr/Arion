@@ -11,7 +11,6 @@ public class DialogueManager : MonoBehaviour
     public GameObject okayButton;
     public GameObject dialogueBox;
     public GameObject player;
-    string testSentence="hahaha wtf it is working";
     void Start(){
         dialogueBox.SetActive(false);
         okayButton.SetActive(false);
@@ -20,10 +19,9 @@ public class DialogueManager : MonoBehaviour
     public IEnumerator TypeDialogue(){
         dialogueBox.SetActive(true);
         textDisplay.text="";
-        //TODO freeze the player
         for(int letter=0;letter<dialogueSentences[index].Length;letter++){
             textDisplay.text+=dialogueSentences[index][letter];
-            yield return null;
+            yield return new WaitForSeconds(typingSpeed);
         }
         okayButton.SetActive(true);
     }

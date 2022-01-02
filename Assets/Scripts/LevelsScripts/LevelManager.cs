@@ -1,14 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
     public Transform target;
-    //[HideInInspector]
+    [HideInInspector]
     public FrameManager[] frames;
+    [HideInInspector]
     public Transform lastCheckPoint;
+    public int nextSceneBuildIndex;
+    public int gameOverSceneBuildIndex;
     private HealthScript playerHealth;
+    public NavigationController navigationController;
     private int lives;
     void Awake() {
         frames=GetComponentsInChildren<FrameManager>();
@@ -23,6 +28,7 @@ public class LevelManager : MonoBehaviour
     }
     void Start()
     {
+        if(navigationController==null)navigationController=GameObject.FindObjectOfType<NavigationController>();
         lives=playerHealth.lives;
     }
     void Update() {
@@ -58,10 +64,10 @@ public class LevelManager : MonoBehaviour
     }
     public void gameOver(){
         Destroy(target.gameObject);
-        Destroy(this.gameObject);
+        navigationController.GoToScene(gameOverSceneBuildIndex);
     }
     public void finishLevel(){
-        Debug.Log("Level Finished");
+        navigationController.GoToScene(nextSceneBuildIndex);
     }
     void activateAllFrames(){
         foreach(FrameManager frame in frames){

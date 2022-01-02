@@ -13,6 +13,7 @@ public enum PlayerStatesNames{
     airControl,
     flipDirection,
     meleeAttack,
+    throwAttack,
     die
 }
 public enum stateStatus{

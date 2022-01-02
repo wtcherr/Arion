@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CheckPoint : MonoBehaviour
 {
+    [HideInInspector]
     public FrameManager frameManager;
     void Start() {
         frameManager=GetComponentInParent<FrameManager>();
