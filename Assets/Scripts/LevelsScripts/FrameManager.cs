@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class FrameManager : MonoBehaviour
 {
-    //[HideInInspector]
+    [HideInInspector]
     public LevelManager levelManager;
-    //[HideInInspector]
+    [HideInInspector]
     public CheckPoint checkPoint;
-    //[HideInInspector]
+    [HideInInspector]
     public Cinemachine.CinemachineVirtualCamera vcam;
-    //[HideInInspector]
+    [HideInInspector]
     public Transform target;
     // Start is called before the first frame update
     void Start()

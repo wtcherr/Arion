@@ -27,7 +27,7 @@ public class DialogueTrigger : MonoBehaviour
         if(other.transform==player.transform){
             hintPanel.SetActive(false);
         }
-        dialogueManager.stopDisplay();
+        //dialogueManager.stopDisplay();
     }
     void OnTriggerStay2D(Collider2D other) {
         if(other.transform==player.transform){
